@@ -15,11 +15,12 @@ describe('identifyHandler', () => {
     const res = await identifyHandler(makeEvent({ cpf: '123' }));
     expect(res.statusCode).toBe(400);
   });
-
-  it('returns token for valid cpf', async () => {
+  it('returns success for valid cpf', async () => {
     const res = await identifyHandler(makeEvent({ cpf: '52998224725' }));
     expect(res.statusCode).toBe(200);
     const body = JSON.parse(res.body);
-    expect(body.token).toBeDefined();
+    expect(body.message).toBe('CPF validation successful');
+    expect(body.cpf).toBe('52998224725');
+    expect(body.status).toBe('validated');
   });
 });

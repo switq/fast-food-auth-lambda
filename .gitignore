@@ -46,9 +46,8 @@ coverage/
 .DS_Store
 Thumbs.db
 
-# Deployment artifacts - ignore everything in deploy except package.json
-deploy/*
-!deploy/package.json
+# Deployment artifacts - ignore everything in deploy folder
+deploy/
 
 # Documentation files for Fase 3 (not to be committed)
 README-FASE3.md

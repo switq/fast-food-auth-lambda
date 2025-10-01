@@ -4,9 +4,8 @@ describe('CPF Validator', () => {
   it('valid known cpf should pass', () => {
     expect(validateCPF('52998224725')).toBe(true);
   });
-
   it('invalid cpf should fail', () => {
-    expect(validateCPF('12345678909')).toBe(false);
+    expect(validateCPF('12345678901')).toBe(false); // CPF realmente inválido
   });
 
   it('rejects non-digit characters', () => {
