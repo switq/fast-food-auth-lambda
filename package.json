@@ -5,7 +5,8 @@
   "main": "dist/bootstrap.js",  "scripts": {
     "build": "tsc -p tsconfig.json",
     "start": "node dist/bootstrap.js",
-    "test": "jest --coverage",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
     "lint": "eslint 'src/**/*.{ts,tsx}' --ext .ts",
     "format": "prettier --write .",
     "package": "npm run build && cd deploy && zip -r fast-food-auth-lambda.zip ."
