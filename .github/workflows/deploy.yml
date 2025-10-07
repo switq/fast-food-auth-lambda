@@ -27,11 +27,20 @@ jobs:
       - name: 🔧 Install dependencies
         run: npm ci
 
+      - name: 🔍 Lint code
+        run: npm run lint
+
       - name: 🧪 Run tests
         run: npm test
 
+      - name: 📊 Generate coverage
+        run: npm run test:coverage
+
       - name: 🏗️ Build
         run: npm run build
+
+      - name: 🔐 Security audit
+        run: npm audit --audit-level moderate
 
   deploy:
     name: 🚀 Deploy to AWS

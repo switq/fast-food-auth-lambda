@@ -1,5 +1,6 @@
 // Main Lambda handler for API Gateway
 import { identifyHandler } from './handlers/identifyHandler';
+import { adminLoginHandler } from './handlers/adminLoginHandler';
 
 const corsHeaders = {
   'Content-Type': 'application/json',
@@ -29,6 +30,9 @@ export const handler = async (event: any, context: any): Promise<any> => {
 
     if (path && (path.endsWith('/identify') || path === '/identify')) {
       return await identifyHandler(event);
+    }
+    if (path && (path.endsWith('/admin-login') || path === '/admin-login')) {
+      return await adminLoginHandler(event);
     }
 
     return {
